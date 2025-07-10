@@ -1,14 +1,19 @@
 @extends('layouts.app')
 
+@section('title', 'Crear Proyecto')
+
 @section('content')
-<div class="container">
-    <h2>Crear Proyecto</h2>
-    <form>
+    <h1 class="text-2xl font-bold mb-4">Crear Proyecto</h1>
+    <form method="POST" action="#">
         @csrf
-        <input type="text" name="titulo" placeholder="Título del Proyecto" class="form-control my-2">
-        <textarea name="descripcion" placeholder="Descripción" class="form-control my-2"></textarea>
-        <input type="number" name="meta" placeholder="Meta de Recaudación" class="form-control my-2">
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <div>
+            <label for="titulo">Título</label>
+            <input type="text" name="titulo" placeholder="Escribe el título" class="border p-2 w-full">
+        </div>
+        <div class="mt-4">
+            <label for="descripcion">Descripción</label>
+            <textarea name="descripcion" placeholder="Escribe una descripción" class="border p-2 w-full"></textarea>
+        </div>
+        <button type="submit" class="btn-primary mt-4">Guardar</button>
     </form>
-</div>
 @endsection
